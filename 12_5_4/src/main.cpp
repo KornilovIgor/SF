@@ -1,0 +1,45 @@
+#include "subArraySum.h"
+
+int main()
+{
+    int arr1[] = {1,1,1,1,1,1,1,0};
+    int n1 = sizeof(arr1) / sizeof(arr1[0]);
+    int sum1 = 0;
+
+    if (subArraySum(arr1, n1, sum1))
+    {
+        std::cout << "Подмассив найден" << std::endl;
+    }
+    else
+    {
+        std::cout << "Подмассив не найден" << std::endl;
+    }
+
+    int arr2[] = {1, 5, 3, 6, 5, 9};
+    int n2 = sizeof(arr2) / sizeof(arr2[0]);
+    int sum2 = 9;
+
+    if (subArraySum(arr2, n2, sum2))
+    {
+        std::cout << "Подмассив найден" << std::endl;
+    }
+    else
+    {
+        std::cout << "Подмассив не найден" << std::endl;
+    }
+
+    int arr3[] = {0, 89, 0, 1, 90};
+    int n3 = sizeof(arr3) / sizeof(arr3[0]);
+    int sum3 = 90;
+
+    if (subArraySum(arr3, n3, sum3))
+    {
+        std::cout << "Подмассив найден" << std::endl;
+    }
+    else
+    {
+        std::cout << "Подмассив не найден" << std::endl;
+    }
+
+    return 0;
+}
