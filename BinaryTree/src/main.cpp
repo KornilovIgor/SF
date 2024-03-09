@@ -1,18 +1,26 @@
-#include "Tree.h"
+#include "BinaryTree.h"
+
+#include <iostream>
 
 int main() {
 
-   Tree tree;
+    BinaryTree binaryTree;
 
-      tree.setRoot(2); // задали корень
-      tree.addNode(2,4); // добавляем узлы
-      tree.addNode(2,0);
-      tree.addNode(2,3);
-      tree.addNode(4,1);
-      tree.addNode(1,5);
-      tree.addNode(1,6);
 
-      tree.delNode(4); // удалили узел 4
+    binaryTree.addInt((int)(2));
+    binaryTree.addInt((int)(1));
+    binaryTree.addInt((int)(4));
+    binaryTree.addInt((int)(7));
+    binaryTree.addInt((int)(5));
+    binaryTree.addInt((int)(3));
+    std::cout << "\nTree:\n"; binaryTree.print();
 
-   return 0;
+
+    std::cout << "\n" << (int)(1) << " : " << binaryTree.findNodeByData((int)(1)) << std::endl;
+
+    binaryTree.delInt((int)(1));
+
+    std::cout << "\nTree:\n"; binaryTree.print();
+
+    return 0;
 }
