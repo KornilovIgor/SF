@@ -23,6 +23,8 @@ class BinaryTree {
 
         void print();
 
+        void symmetricWalk(int output_array[]);
+
     private:
 void setNewChild(Node* child, Node* newChild = nullptr);
     void delNodeWithOneChild(Node* delNode);

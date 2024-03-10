@@ -12,7 +12,7 @@ void BinaryTree::inorder(Node* root)
 {
     if (root != NULL) {
         inorder(root->leftChild);
-        std::cout << root->data << std::endl;
+        std::cout << root->data << " ";
         inorder(root->rightChild);
     }
 }
