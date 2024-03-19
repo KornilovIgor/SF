@@ -1,5 +1,7 @@
 #include "Trie.h"
 
+#include <iostream>
+
 TrieNode::TrieNode()
 {
     children = std::vector<std::unique_ptr<TrieNode>>(26);
@@ -36,33 +38,33 @@ void Trie::insert(const std::string& word)
 
 std::vector<std::string> Trie::search(const std::string& prefix)
 {
-    std::vector<std::string> suggestions;
+    std::vector<std::string> variants;
     TrieNode* curr = root_.get();
     for (char c : prefix)
     {
         curr = curr->getChild(c);
         if (curr == nullptr)
         {
-            return suggestions;
+            return variants;
         }
     }
 
-    searchWords(curr, prefix, suggestions);
-    return suggestions;
+    searchWords(curr, prefix, variants);
+    return variants;
 }
 
-void Trie::searchWords(TrieNode* node, const std::string& prefix, std::vector<std::string>& suggestions)
+void Trie::searchWords(TrieNode* node, const std::string& prefix, std::vector<std::string>& variants)
 {
     if (node->isEndOfWord)
     {
-        suggestions.push_back(prefix);
+        variants.push_back(prefix);
     }
     for (int i = 0; i < 26; i++)
     {
         TrieNode* child = node->getChild('a' + i);
         if (child != nullptr)
         {
-            searchWords(child, prefix + char('a' + i), suggestions);
+            searchWords(child, prefix + char('a' + i), variants);
         }
     }
 }

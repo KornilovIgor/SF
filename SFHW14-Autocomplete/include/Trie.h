@@ -26,5 +26,5 @@ public:
     std::vector<std::string> search(const std::string& prefix);
 
 private:
-    void searchWords(TrieNode* node, const std::string& prefix, std::vector<std::string>& suggestions);
+    void searchWords(TrieNode* node, const std::string& prefix, std::vector<std::string>& variants);
 };
