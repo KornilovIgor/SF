@@ -37,6 +37,7 @@ class Chat
 	bool isValidPassword(const std::string& password) const;
 
 	bool repeat();
+	void waitForInput();
 
 public:
 	void run();
